@@ -1,0 +1,23 @@
+.userCard {
+  display: flex;
+}
+
+.content {
+  grid-area: c;
+}
+.image_top {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.image_top img {
+  max-width: 100%;
+  display: block;
+}
+.avatar {
+  max-width: 100px;
+  margin-right: 20px;
+}
+.avatar img {
+  max-width: 100%;
+  display: block;
+}

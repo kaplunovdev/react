@@ -1,0 +1,10 @@
+.item {
+  color: brown;
+}
+
+.post_avatar {
+  max-width: 40px;
+}
+.post_avatar img {
+  max-width: 100%;
+}

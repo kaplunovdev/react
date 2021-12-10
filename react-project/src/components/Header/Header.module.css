@@ -1,0 +1,12 @@
+.header {
+  grid-area: h;
+  background: rgb(109, 235, 109);
+  min-height: 69px;
+}
+
+.header img {
+  max-width: 50px;
+  display: block;
+  margin: 10px;
+  cursor: pointer;
+}
