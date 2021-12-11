@@ -4,11 +4,19 @@
   width: 200px;
   padding: 10px;
 }
-.nav a {
-  color: rgb(42, 83, 42);
+
+.item {
   font-size: 20px;
-  text-decoration: none;
+  color: green;
 }
-.nav a:hover {
-  text-decoration: underline;
+.item a{
+  text-decoration: none;
+font-family: sans-serif;
+}
+.item a.active{
+  color: white;
+}
+.active a {
+  color: white;
+
 }

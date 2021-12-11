@@ -1,27 +1,12 @@
 import React from "react";
-import MyPosts from "./MyPosts/MyPosts";
-import style from "./Profile.module.css";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+
 const Profile = () => {
-  return (
-    <div className={style.content}>
-      <div className={style.image_top}>
-        <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" />
-      </div>
-      <div className={style.userCard}>
-        <div className={style.avatar}>
-          <img src="https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg" />
-        </div>
+    return (
         <div>
-          <p>Alexandr Kaplunov</p>
-          <p>Date of Birth: 1 february</p>
-          <p>City: Taganrog</p>
-          <p>Education: Colledge</p>
-          <p>Web site: https://github.com/kaplunovdev</p>
+            <ProfileInfo/>
         </div>
-      </div>
-      <MyPosts />
-    </div>
-  );
+    );
 };
 
 export default Profile;
