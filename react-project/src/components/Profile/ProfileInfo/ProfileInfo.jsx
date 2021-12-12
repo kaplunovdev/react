@@ -22,13 +22,14 @@ const UserCard = () => {
 }
 
 const ProfileInfo = (props) => {
+    console.log(props.state.posts)
     return (
         <div>
             <div className={style.image_top}>
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg"/>
             </div>
             <UserCard/>
-            <MyPosts posts={props.posts}/>
+            <MyPosts posts={props.state.posts}/>
         </div>
     );
 };

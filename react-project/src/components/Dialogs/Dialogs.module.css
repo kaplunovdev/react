@@ -2,18 +2,34 @@
     display: flex;
     flex-direction: column;
     width: 20%;
+    margin-right: 20px;
+    border-right: 1px solid #dbdbdb;
+
 }
-.chatMain{
+
+.chatMain {
     display: flex;
 }
+
 .dialogs_items {
     width: 20%;
     display: flex;
     flex-direction: column;
+
+
+}
+
+.dialogName {
+
+
 }
 
 .dialog {
-    width: 60%;
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-right: 20px;
 }
 
 .dialogs_items .active {
@@ -26,4 +42,9 @@
 
 .message {
 
+}
+
+.dialogAvatar {
+    width: 25px;
+    margin-right: 15px;
 }

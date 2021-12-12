@@ -3,35 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from "./redux/state";
+import {BrowserRouter} from "react-router-dom";
 
-let posts = [
-    {id: 1, message: 'Hi, how are you?', likeCount: 12},
-    {id: 1, message: 'First post', likeCount: 4},
-]
-let dialogs = [
-    {id: 1, name: 'Andrey'},
-    {id: 2, name: 'Kate'},
-    {id: 3, name: 'Misha'},
-    {id: 4, name: 'Richard'},
-]
-
-let messages = [
-    {id: 1, message: 'messages'},
-    {id: 2, message: 'Yo'},
-    {id: 3, message: 'My name is Alexandr'},
-    {id: 4, message: 'Hi boy'},
-]
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App
-        posts={posts}
-        dialogs={dialogs}
-        messages={messages}
+    <React.StrictMode>
+        <BrowserRouter>
+            <App state={state}/>
+        </BrowserRouter>
+    </React.StrictMode>,
 
-    />
-  </React.StrictMode>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
