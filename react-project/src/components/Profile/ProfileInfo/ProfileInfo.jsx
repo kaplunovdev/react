@@ -21,14 +21,14 @@ const UserCard = () => {
     )
 }
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
     return (
         <div>
             <div className={style.image_top}>
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg"/>
             </div>
             <UserCard/>
-            <MyPosts/>
+            <MyPosts posts={props.posts}/>
         </div>
     );
 };

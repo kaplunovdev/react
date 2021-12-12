@@ -1,8 +1,15 @@
 import React from "react";
 import style from "./MyPosts.module.css";
-import {postsElement} from "../../../index";
+import Post from "./Post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+     let postsElement = props.posts.map(el =>
+        <Post
+            post={el.id}
+            message={el.message}
+            likeCount={el.likeCount}
+        />
+    )
     return (
         <div>
             <div className={style.input}>
