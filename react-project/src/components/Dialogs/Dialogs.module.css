@@ -9,6 +9,7 @@
 
 .chatMain {
     display: flex;
+    min-height: 400px;
 }
 
 .dialogs_items {
@@ -16,13 +17,8 @@
     display: flex;
     flex-direction: column;
 
-
 }
 
-.dialogName {
-
-
-}
 
 .dialog {
 
@@ -36,15 +32,84 @@
     color: #ff747c;
 }
 
-.messages {
-
-}
-
-.message {
-
-}
-
 .dialogAvatar {
     width: 25px;
     margin-right: 15px;
+}
+.addMessage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+}
+.addMessage textarea{
+    width: 80%;
+    min-height: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+    font-family: sans-serif;
+}
+.addMessage button{
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    background-color: tomato;
+    color: #fff;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.blockChat{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100%;
+}
+/*Message*/
+.message {
+    /*display: inline-block;*/
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.message > span {
+    background: #dcf8c6;
+    border-radius: 0.4em;
+    display: inline-block;
+    padding: 10px;
+    z-index: 1;
+}
+
+.message::after {
+    background-color: #ffffff;
+    border-radius: 0 0 50% 0;
+    border-right: 0;
+    bottom: 14px;
+    content: '';
+    height: 30px;
+    margin-top: -5px;
+    margin-right: -5px;
+    position: absolute;
+    right: -21px;
+    transform: rotate(10deg);
+    width: 30px;
+    z-index: -1;
+}
+
+.message::before {
+    background-color: #dcf8c6;
+    border-radius: 50%;
+    border-right: 0;
+    bottom: 7px;
+    content: '';
+    height: 30px;
+    margin-top: -5px;
+    margin-right: -5px;
+    position: absolute;
+    right: -11px;
+    transform: rotate(20deg);
+    width: 30px;
+    z-index: -1;
 }
