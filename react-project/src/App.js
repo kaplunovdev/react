@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import ProfileInfo from "./components/Profile/ProfileInfo/ProfileInfo";
 import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";

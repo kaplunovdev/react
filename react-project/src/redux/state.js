@@ -1,7 +1,6 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
-
 export let store = {
     _state: {
         profilePage: {
@@ -11,6 +10,7 @@ export let store = {
                 {id: 3, message: 'Second post', likeCount: 24},
                 {id: 4, message: 'Third post', likeCount: 14},
             ],
+            newPostText:''
 
         },
         dialogsPage: {

@@ -4,8 +4,6 @@ import Post from "./Post/Post";
 import {addPostActionCreator, updateNewActionCreator} from "../../../redux/state";
 
 
-
-
 const MyPosts = (props) => {
 
     let postsElement = props.posts.map(el =>
@@ -20,11 +18,11 @@ const MyPosts = (props) => {
 
 
     const addPost = () => {
-    props.dispatch(addPostActionCreator())
+        props.dispatch(addPostActionCreator())
     }
 
     const onPostChange = () => {
-        let text  = newPostElement.current.value
+        let text = newPostElement.current.value
         let action = updateNewActionCreator(text);
         props.dispatch(action);
     }
@@ -32,7 +30,7 @@ const MyPosts = (props) => {
         <div>
             <div className={style.input}>
                 <textarea ref={newPostElement} onChange={onPostChange}
-                          value={props.newPostText}></textarea>
+                          value={props.newPostText}/>
                 <button onClick={addPost}>Add post</button>
             </div>
             My posts:
