@@ -9,24 +9,28 @@ import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {addPost} from "./redux/state";
+import Profile from "./components/Profile/Profile";
 
 const App = (props) => {
 
     return (
-            <div className="app-wrapper">
-                <Header/>
-                <Navbar/>
-                <div className="app-wrapper-content">
-                    <Routes>
-                        <Route path='/dialogs'
-                               element={<Dialogs state={props.state.dialogsPage}/>}/>
-                        <Route path='/profile' element={<ProfileInfo state={props.state.profilePage} addPost={props.addPost}/>}/>
-                        <Route path='/news' element={<News/>}/>
-                        <Route path='/music' element={<Music/>}/>
-                        <Route path='/settings' element={<Settings/>}/>
-                    </Routes>
-                </div>
+        <div className="app-wrapper">
+            <Header/>
+            <Navbar/>
+            <div className="app-wrapper-content">
+                <Routes>
+                    <Route path='/dialogs'
+                           element={<Dialogs state={props.dialogsPage}/>}/>
+                    <Route path='/profile' element={<Profile profilePage={props.state.profilePage}
+                                                             dispatch={props.dispatch}
+
+                    />}/>
+                    <Route path='/news' element={<News/>}/>
+                    <Route path='/music' element={<Music/>}/>
+                    <Route path='/settings' element={<Settings/>}/>
+                </Routes>
             </div>
+        </div>
 
     );
 };

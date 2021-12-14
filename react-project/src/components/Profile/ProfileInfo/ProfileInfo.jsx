@@ -5,7 +5,6 @@ import MyPosts from "../MyPosts/MyPosts";
 const UserCard = () => {
     return (
         <div className={style.userCard}>
-
             <div className={style.avatar}>
                 <img
                     src="https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg"/>
@@ -29,7 +28,6 @@ const ProfileInfo = (props) => {
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg"/>
             </div>
             <UserCard/>
-            <MyPosts posts={props.state.posts} addPost={props.addPost}/>
         </div>
     );
 };
