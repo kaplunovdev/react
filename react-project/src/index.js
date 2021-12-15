@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import state, {addPost, store} from "./redux/state";
+import state, {addPost, store} from "./redux/store";
 import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";

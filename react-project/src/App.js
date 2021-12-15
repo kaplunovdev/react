@@ -8,7 +8,7 @@ import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Profile from "./components/Profile/Profile";
-import store from "./redux/state";
+import store from "./redux/store";
 
 const App = (props) => {
 
