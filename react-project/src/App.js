@@ -8,10 +8,8 @@ import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Profile from "./components/Profile/Profile";
-import store from "./redux/store";
 
 const App = (props) => {
-
     return (
         <div className="app-wrapper">
             <Header/>
@@ -20,11 +18,11 @@ const App = (props) => {
                 <Routes>
                     <Route path='/dialogs'
                            element={<Dialogs
-                               store={store}
+                               store={props.store}
                            />}/>
-                    <Route path='/profile' element={<Profile profilePage={props.state.profilePage}
-                                                             dispatch={props.dispatch}
-
+                    <Route path='/profile' element={<Profile
+                        profilePage={props.state.profilePage}
+                        dispatch={props.dispatch}
                     />}/>
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
