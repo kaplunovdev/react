@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./ProfileInfo.module.css";
-import MyPosts from "../MyPosts/MyPosts";
 
 const UserCard = () => {
     return (
