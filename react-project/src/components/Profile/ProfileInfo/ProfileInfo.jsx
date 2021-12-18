@@ -1,32 +1,31 @@
 import React from "react";
 import style from "./ProfileInfo.module.css";
+import Preloader from "../../common/Preloader/Preloader";
 
-const UserCard = () => {
-    return (
-        <div className={style.userCard}>
-            <div className={style.avatar}>
-                <img
-                    src="https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg"/>
-            </div>
-            <div>
-                <p>Alexandr Kaplunov</p>
-                <p>Date of Birth: 1 february</p>
-                <p>City: Taganrog</p>
-                <p>Education: Colledge</p>
-                <p>Web site: https://github.com/kaplunovdev</p>
-            </div>
-        </div>
-    )
-}
 
 const ProfileInfo = (props) => {
-
+    if(!props.profile){
+        return <Preloader/>
+    }
     return (
         <div>
             <div className={style.image_top}>
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg"/>
             </div>
-            <UserCard/>
+            <div className={style.userCard}>
+                <div className={style.avatar}>
+                    <img
+                        src={props.profile.photos.large}/>
+                </div>
+                <div>
+                    <p>{props.profile.fullName}</p>
+                    <p>{props.profile.aboutMe}</p>
+                    <p>City: Taganrog</p>
+                    <p>Education: Colledge</p>
+                    <p>{props.profile.contacts.instagram}</p>
+                </div>
+            </div>
+
         </div>
     );
 };

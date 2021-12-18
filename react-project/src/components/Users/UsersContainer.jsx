@@ -9,9 +9,7 @@ import {
 } from "../../redux/users-reducer";
 import {connect} from "react-redux";
 import axios from "axios";
-import style from "./Users.module.css";
 import Preloader from "../common/Preloader/Preloader";
-import loadingSvg from "../../assets/images/loading.svg";
 
 class UsersContainer extends React.Component {
 
