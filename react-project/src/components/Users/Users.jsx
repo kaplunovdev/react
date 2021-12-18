@@ -1,89 +1,70 @@
 import React from "react";
-import style from './Users.module.css'
-import axios from "axios";
 import userPhoto from '../../assets/images/avatar.png'
+import style from "./Users.module.css";
 
-class Users extends React.Component {
+let Users = (props) => {
 
-    componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.countPage}`)
-            .then(response => {
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUsersCount(response.data.totalCount)
-
-            })
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = []
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
     }
 
-    onPageChanged = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.countPage}`)
-            .then(response => {
-                this.props.setUsers(response.data.items)
-            })
-    }
+    return (
+        <div>
+            <div className={style.pagination}>
+                {pages.map(p => {
+                    return <span className={props.currentPage === p && style.selectedPage}
+                                 onClick={() => {
+                                     props.onPageChanged(p)
+                                 }}>{p}</span>
+                })}
 
-    render() {
-        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-        let pages = []
-        for (let i = 1; i <= pagesCount; i++) {
-            pages.push(i)
-        }
+            </div>
+            {props.users.map(user =>
+                <div className={style.user} key={user.id}>
+                    <div className={style.follow}>
+                        <div className={style.avatar}>
+                            <img src={user.photos.small !== null ? user.photos.small : userPhoto}/>
+                        </div>
+                        <div>
+                            {user.following ?
+                                <button onClick={() => {
+                                    props.unFollow(user.id)
+                                }}>unFollow</button> :
+                                <button onClick={() => {
+                                    props.follow(user.id)
+                                }}>Follow</button>
+                            }
 
-        return (
-            <div>
-                <div className={style.pagination}>
-                    {pages.map(p => {
-                        return <span className={this.props.currentPage === p && style.selectedPage}
-                                     onClick={() => {
-                                         this.onPageChanged(p)
-                                     }}>{p}</span>
-                    })}
-
-                </div>
-                {this.props.users.map(user =>
-                    <div className={style.user} key={user.id}>
-                        <div className={style.follow}>
-                            <div className={style.avatar}>
-                                <img src={user.photos.small !== null ? user.photos.small : userPhoto}/>
+                        </div>
+                    </div>
+                    <div className={style.info}>
+                        <div className={style.name}>
+                            <div>
+                                {user.name}
                             </div>
                             <div>
-                                {user.following ?
-                                    <button onClick={() => {
-                                        this.props.unFollow(user.id)
-                                    }}>unFollow</button> :
-                                    <button onClick={() => {
-                                        this.props.follow(user.id)
-                                    }}>Follow</button>
-                                }
-
+                                {"user.status"}
                             </div>
                         </div>
-                        <div className={style.info}>
-                            <div className={style.name}>
-                                <div>
-                                    {user.name}
-                                </div>
-                                <div>
-                                    {"user.status"}
-                                </div>
+                        <div className={style.country}>
+                            <div>
+                                {"user.location.country"}
                             </div>
-                            <div className={style.country}>
-                                <div>
-                                    {"user.location.country"}
-                                </div>
-                                <div>
-                                    {"user.location.city"}
-                                </div>
+                            <div>
+                                {"user.location.city"}
                             </div>
                         </div>
                     </div>
-                )}
-                <div className={style.showMore}>
-                    <button>Show more</button>
                 </div>
+            )}
+            <div className={style.showMore}>
+                <button>Show more</button>
             </div>
-        )
-    }
+        </div>
+    )
+
 }
 
 export default Users;
