@@ -2,6 +2,7 @@
     grid-area: h;
     background: rgb(109, 235, 109);
     min-height: 69px;
+    position: relative;
 }
 
 .header img {
@@ -9,4 +10,11 @@
     display: block;
     margin: 10px;
     cursor: pointer;
+}
+
+.loginBlock {
+    right: 20px;
+    top: 50%;
+    margin-top:-10px ;
+    position: absolute;
 }
