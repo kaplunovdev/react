@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
-
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
     if(!props.profile){
@@ -9,10 +9,14 @@ const ProfileInfo = (props) => {
     }
     return (
         <div>
+
             <div className={style.image_top}>
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" alt='image'/>
             </div>
+            <ProfileStatus status={'Hello my friends'}/>
+
             <div className={style.userCard}>
+
                 <div className={style.avatar}>
                     <img
                         src={props.profile.photos.large} alt=''/>
@@ -23,7 +27,9 @@ const ProfileInfo = (props) => {
                     <p>City: Taganrog</p>
                     <p>Education: Colledge</p>
                     <p>{props.profile.contacts.instagram}</p>
+
                 </div>
+
             </div>
 
         </div>

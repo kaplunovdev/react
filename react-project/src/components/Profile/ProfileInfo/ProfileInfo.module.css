@@ -5,7 +5,9 @@
 .content{
 
 }
-
+.ProfileStatus{
+    margin-bottom: 20px;
+}
 .image_top {
     margin-bottom: 20px;
     overflow: hidden;
