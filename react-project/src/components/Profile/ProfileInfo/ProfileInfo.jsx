@@ -10,12 +10,12 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div className={style.image_top}>
-                <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg"/>
+                <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" alt='image'/>
             </div>
             <div className={style.userCard}>
                 <div className={style.avatar}>
                     <img
-                        src={props.profile.photos.large}/>
+                        src={props.profile.photos.large} alt=''/>
                 </div>
                 <div>
                     <p>{props.profile.fullName}</p>

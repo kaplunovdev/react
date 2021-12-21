@@ -5,7 +5,7 @@ import  loadingSvg from '../../../assets/images/loading.svg'
 let Preloader =(props)=>{
     return (
         <div>
-            <img className={style.loadingSvg} src={loadingSvg}/>
+            <img className={style.loadingSvg} src={loadingSvg} alt='Loading'/>
         </div>
     )
 }

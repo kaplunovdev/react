@@ -8,7 +8,7 @@ const Header = (props) => {
         <header className={style.header}>
             <a href="/">
                 <img
-                    src="https://logoeps.com/wp-content/uploads/2014/09/34405-linkedin-logo-icon-vector-icon-vector-eps.png"/>
+                    src="https://logoeps.com/wp-content/uploads/2014/09/34405-linkedin-logo-icon-vector-icon-vector-eps.png" alt=''/>
             </a>
             <div className={style.loginBlock}>
                 <NavLink to={'/login'}>{props.isAuth ? props.login : 'Login'}</NavLink>

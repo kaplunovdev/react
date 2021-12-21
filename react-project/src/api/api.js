@@ -1,6 +1,4 @@
 import axios from "axios";
-import {setCurrentPage} from "../redux/users-reducer";
-
 const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
@@ -14,13 +12,29 @@ export const usersAPI = {
             .then(response => response.data)
     },
     followUser(userId) {
-        return instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+        return instance.post(`follow/${userId}`)
 
     },
     unFollowUser(userId = 1, pageSize = 10) {
-        return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+        return instance.delete(`follow/${userId}`)
 
     },
+    getProfile(userId){
+      return   instance.get(`profile/` + userId);
+
+    }
+
+
+
+}
+
+export const authAPI = {
+ me(){
+   return   instance.get(`auth/me`)
+
+ }
+
+
 
 
 }
