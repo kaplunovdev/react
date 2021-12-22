@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
             <div className={style.image_top}>
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" alt='image'/>
             </div>
-            <ProfileStatus status={'Hello my friends'}/>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
 
             <div className={style.userCard}>
 
