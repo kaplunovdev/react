@@ -18,12 +18,11 @@ const ProfileInfo = (props) => {
             <div className={style.userCard}>
 
                 <div className={style.avatar}>
-                    <img
-                        src={props.profile.photos.large} alt=''/>
+                    <img src={props.profile.photos.large} alt=''/>
                 </div>
                 <div>
                     <p>{props.profile.fullName}</p>
-                    <p>{props.profile.aboutMe}</p>
+                    <p>{'props.profile.aboutMe'}</p>
                     <p>City: Taganrog</p>
                     <p>Education: Colledge</p>
                     <p>{props.profile.contacts.instagram}</p>
