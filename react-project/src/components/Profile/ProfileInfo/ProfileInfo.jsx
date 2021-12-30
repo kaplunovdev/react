@@ -2,6 +2,7 @@ import React from "react";
 import style from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     if(!props.profile){
@@ -13,7 +14,7 @@ const ProfileInfo = (props) => {
             <div className={style.image_top}>
                 <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" alt='image'/>
             </div>
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
 
             <div className={style.userCard}>
 
