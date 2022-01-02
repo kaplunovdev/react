@@ -1,4 +1,5 @@
 import {usersAPI} from "../api/api";
+import {updateObjectInArray} from "../utils/object-helpers";
 
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -23,23 +24,14 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state,
-                users: state.users.map(user => {
-                    if (user.id === action.userId) {
-                        return {...user, following: true}
-                    }
-                    return user
-                })
+                users: updateObjectInArray(state.users,action.userId,'id',{followed:true})
             }
 
         case UNFOLLOW:
             return {
                 ...state,
-                users: state.users.map(user => {
-                    if (user.id === action.userId) {
-                        return {...user, following: false}
-                    }
-                    return user
-                })
+                users: updateObjectInArray(state.users,action.userId,'id',{followed:false})
+
             }
 
         case SET_USERS:
@@ -59,7 +51,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 followingInProgress: action.isFetching
                     // ? [...state.followingInProgress, action.userId]
-                    // : state.followingInProgress.filter(id => id !== action.userId)
+                    // : state.followingInProgress.filter(id => id != action.userId)
 
             }
         default:
@@ -83,17 +75,14 @@ export const toggleFollowingProgress = (isFetching, userId) => ({
 
 
 export const requestUsers = (page,pageSize) => {
-    return (dispatch)=> {
+    return async (dispatch)=> {
         dispatch(toggleIsFetching(true))
         dispatch(setCurrentPage(page))
 
-        usersAPI.getUsers(page, pageSize)
-            .then(data => {
+      const data = await  usersAPI.getUsers(page, pageSize)
                 dispatch(toggleIsFetching(false))
                 dispatch(setUsers(data.items))
                 dispatch(setUsersTotalCount(data.totalCount))
-
-            })
     }
 }
 

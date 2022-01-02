@@ -14,14 +14,7 @@
 justify-content: center;
 
 }
-.selectedPage{
-    font-weight: bold;
-    font-size: 18px;
-}
-.pagination span{
-    margin-right: 10px;
-    cursor: pointer;
-}
+
 .follow button {
     background: #269126;
     color: white;

@@ -4,25 +4,23 @@ import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Navigate} from 'react-router-dom';
 import style from "../../components/common/FormsControls/FormsControls.module.css"
+import {createField, Input} from "../common/FormsControls/FormsControls";
+import {required} from "../../utils/validators/validators";
 
 
-const loginForm = (props) => {
+const loginForm = ({handleSubmit, error}) => {
     return (
         <div>
 
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <Field name={'email'} component={"input"} placeholder={'email'}/>
+                    {createField("Email", "email", [required], Input)}
+                    {createField("password", "password", [required], Input, {type: "password"})}
+                    {createField(null, "rememberMe", null, Input, {type: "checkbox"}, 'rememberMe')}
                 </div>
-                <div>
-                    <Field name={'password'} component={"input"} placeholder={'password'} type={'password'}/>
-                </div>
-                <div>
-                    <Field name={'rememberMe'} component={"input"} type={'checkbox'} placeholder={'password'}/>remember
-                    me
-                </div>
-                {props.error && <div className={style.formSummaryError}>
-                    {props.error}
+
+                {error && <div className={style.formSummaryError}>
+                    {error}
                 </div>}
 
                 <button type={"submit"}>Login</button>

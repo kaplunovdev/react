@@ -42,7 +42,7 @@ it('delete post', () => {
     expect(newState.posts.length).toBe(3)
 })
 
-it('incorrect id', () =>  {
+it('incorrect id', () =>   {
 //1. test data
     const action = deletePost(100000);
 
