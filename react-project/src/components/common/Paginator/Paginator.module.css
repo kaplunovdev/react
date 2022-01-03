@@ -3,6 +3,13 @@
     font-size: 18px;
 }
 .pagination span{
-    margin-right: 10px;
+    margin: 5px;
     cursor: pointer;
+}
+.pagination span:last-child{
+    margin-right: 0;
+
+}
+.pagination{
+    margin-bottom: 20px;
 }
