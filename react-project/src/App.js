@@ -38,9 +38,15 @@ class App extends React.Component {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path='/dialogs'
-                               element={withSuspense(DialogsContainer)}/>
+                               element={
+                                   <Suspense fallback={<Preloader/>}>
+                                       <DialogsContainer/>
+                                   </Suspense>}/>
                         <Route path='/profile'
-                               element={withSuspense(ProfileContainer)}/>
+                               element={
+                                   <Suspense fallback={<Preloader/>}>
+                                       <ProfileContainer/>
+                                   </Suspense>}/>}/>
                         <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/music' element={<Music/>}/>
